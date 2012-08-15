@@ -1,6 +1,8 @@
 ;; Add support for knit and purl
 (add-to-list 'load-path "~/.emacs.d/personal/")
+(add-to-list 'load-path "~/.emacs.d/personal/o-blog")
 (require 'ess-knitr)
+(require 'o-blog)
 
 ;; LaTeX configuration
 (setq TeX-auto-save t)

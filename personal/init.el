@@ -3,6 +3,7 @@
 (add-to-list 'load-path "~/.emacs.d/personal/o-blog")
 (require 'ess-knitr)
 (require 'o-blog)
+(require 'org-exp-bibtex)
 
 ;; LaTeX configuration
 (setq TeX-auto-save t)
@@ -24,3 +25,13 @@
 (setq TeX-view-program-list '(("SumatraPDF" "\"C:/Program Files (x86)/SumatraPDF/SumatraPDF.exe\" -reuse-instance %o")))
 (setq TeX-view-program-selection '((output-pdf "SumatraPDF")))
 (require 'sumatra-forward)
+
+;; Setting up RefTeX
+(defun org-mode-reftex-setup ()
+  (load-library "reftex")
+  (and (buffer-file-name)
+       (file-exists-p (buffer-file-name))
+       (reftex-parse-all))
+  (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
+  )
+(add-hook 'org-mode-hook 'org-mode-reftex-setup)

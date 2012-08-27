@@ -35,3 +35,6 @@
   (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
   )
 (add-hook 'org-mode-hook 'org-mode-reftex-setup)
+
+;; Fix for AUCTeX preview font sizes
+(setq preview-scale-function 1.2)

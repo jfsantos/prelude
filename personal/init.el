@@ -1,6 +1,5 @@
 ;; Add support for knit and purl
 (add-to-list 'load-path "~/.emacs.d/personal/")
-(add-to-list 'load-path "~/.emacs.d/personal/o-blog")
 (require 'ess-knitr)
 (require 'org-exp-bibtex)
 
@@ -38,3 +37,6 @@
 ;; Setting up writegood-mode
 (require 'writegood-mode)
 (global-set-key "\C-cg" 'writegood-mode)
+
+;; Fix for AUCTeX preview font sizes
+(setq preview-scale-function 1.2)

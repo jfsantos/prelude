@@ -2,7 +2,6 @@
 (add-to-list 'load-path "~/.emacs.d/personal/")
 (add-to-list 'load-path "~/.emacs.d/personal/o-blog")
 (require 'ess-knitr)
-(require 'o-blog)
 (require 'org-exp-bibtex)
 
 ;; LaTeX configuration
@@ -35,3 +34,7 @@
   (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
   )
 (add-hook 'org-mode-hook 'org-mode-reftex-setup)
+
+;; Setting up writegood-mode
+(require 'writegood-mode)
+(global-set-key "\C-cg" 'writegood-mode)

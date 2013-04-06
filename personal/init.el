@@ -3,6 +3,12 @@
 (require 'ess-knitr)
 (require 'org-exp-bibtex)
 
+;; Disable guru-mode (I like using arrows :p)
+(setq prelude-guru nil)
+
+;; Disable whitespace-mode
+(setq prelude-whitespace nil)
+
 ;; LaTeX configuration
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
